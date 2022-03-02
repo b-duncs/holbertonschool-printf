@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int _printf(const char *format, ...);
+void _printf(const char *format, ...);
+char* convert(unsigned int, int);
 
 #endif /* MAIN_H */
