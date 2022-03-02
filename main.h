@@ -6,6 +6,11 @@
 #include <stdio.h>
 #include <limits.h>
 
+/**
+ * print_x - typedef for struct print
+ */
+typedef struct print print_x;
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 
