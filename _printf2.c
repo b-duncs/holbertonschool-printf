@@ -11,12 +11,16 @@ int print_integer(va_list list);
  * @format: char being evaluated
 (*
  * Description: produces output according to a format)?
+ * https://www.tutorialspoint.com/register-keyword-in-c
  * Return: printed_values
  */
 
 int _printf(const char *format, ...)
 {
 	int printed_values;
+	const char *x;
+	register int string = 0;
+
 	print_t f_list[] = {
 		{"c", print_character},
 		{"s", print_string},
@@ -26,7 +30,7 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
-	va_list arg_list, format;
+	va_list arg_list;
 
 	if (format == NULL)
 	{
@@ -38,24 +42,24 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (p = format; *p; p++)
+	for (x = format; *x; x++)
 	{
-		if (*p == '%')
+		if (*x == '%')
 		{
-			p++;
-			if (*p == '%')
+			x++;
+			if (*x == '%')
 			{
-				count += _putchar('%');
+				string += _not_putchar('%');
 				continue;
 			}
-			while (get_flag(*p, &flags))
-				p++;
-			pfunc = get_print(*p);
+			while (print_t(*x, &printed_values))
+				x++;
+			pfunc = printed_values(*x);
 		}
 		else 
-			count += _putchar(*p);
+			string += _not_putchar(*x);
 	}
-	_putchar(-1);
+	_not_putchar(-1);
 	va_end(arg_list);
 	return (printed_values);
 }
