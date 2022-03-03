@@ -6,7 +6,10 @@
 #include <stdio.h>
 #include <limits.h>
 
-void _printf(const char *format, ...);
-char* convert(unsigned int, int);
+int _printf(const char *format, ...);
+int print_character(va_list list);
+int print_string(va_list list);
+int print_percent(va_list list);
+int print_integer(va_list list);
 
 #endif /* MAIN_H */
