@@ -1,0 +1,14 @@
+/* pseudocode to be changed to proper man page + finished */
+% printf(3) 
+% Baylee Duncan & NV Ozmus
+% 03/2022
+
+# NAME
+printf - formatted output conversion
+
+# SYNOPSIS
+**printf** [*OPTION*]\
+**printf** *PATTERN*
+
+# Description 
+**printf** functions write the output under the contral of a format string that specifies how subsequent arguments are converted for output.
