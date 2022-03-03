@@ -85,7 +85,8 @@ int print_string(va_list list)
  * print_percent - program startup
  * @list: variable argument being evaluated
 (*
- * Description: percent output)?
+ * Description: percent output
+ * https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Variable-Attributes.html)?
  * Return: return (1) is the required function signature
  */
 
