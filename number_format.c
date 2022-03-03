@@ -1,38 +1,41 @@
 #include "main.h"
 
 /**
- * number_format - prints integer for printf
- * @args: List of arguments
- * Return: number of arguments printed
+ * number_format - program startup
+ * @args: variable argument list
+(* 
+ * Description: formats numbers for _printf
+ * Resource: https://linux.die.net/man/3/va_arg
+ * Return: format
  */
 
 int number_format(va_list args)
 {
-	int n;
-	int div;
-	int len;
+	int x;
+	int y;
+	int format;
 	unsigned int num;
 
-	n = va_arg(args, int);
-	div = 1;
-	len = 0;
+	x = va_arg(args, int);
+	y = 1;
+	format = 0;
 
-	if (n < 0)
+	if (x < 0)
 	{
-		len += _not_putchar('-');
-		num = n * -1;
+		format += _not_putchar('-');
+		num = x * -1;
 	}
 	else
-		num = n;
+		num = x;
 
-	for (; div > 9; )
-		div *= 10;
+	for (; y > 9; )
+		y *= 10;
 
-	for (; div != 0; )
+	for (; y != 0; )
 	{
-		len += _not_putchar('0' + num / div);
-		num %= div;
-		div /= 10;
+		format += _not_putchar('0' + num / y);
+		num %= y;
+		y /= 10;
 	}
-	return (len);
+	return (format);
 }
