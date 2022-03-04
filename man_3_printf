@@ -1,0 +1,51 @@
+.\"Manpage for _printf
+.\" Contact Baylee Duncan 4217@holbertonschool.com or NV Ozmus 4216@holbertonschool.com for any corrections
+
+.TH _printf(3) "03/2022" "1.0" "_printf man page"
+.SH NAME
+.B _printf
+-\ formatted output conversion
+
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *
+.I format
+.B , ...)
+.SH Description 
+.B _printf()
+
+functions write the output under the contral of a format string that specifies how subsequent arguments are converted for output.
+
+.SH Return Value
+On success, functions return the number of characters printed, excluding the null byte.
+
+if output error, a negative value is returned.
+
+.SH FORMAT
+Format string conssits of 0 or more directives (characters that are not %) are copied to the output. The format is made of conversion specifiers, which result in fetching subsequent arguments. Each is introduced with % and ends with the specifier.
+The argument corresponds with the conversion specifier all arguments are used in order given.
+.SH The conversion specifier
+Characters that specifies applied conversion type. COnversion specifiers are as follows:
+
+.TP
+.PR c
+Int argument is converted to unsigned char and the converted character is printed.
+.TP
+.B s
+The const char * argument is a pointer to an array of character type.
+Character in the array are written up to but do not include the NULL byte.
+.TP
+.B d, i
+The int argument is converted to signed decimal notation.
+.TP
+.B %
+A '%' is written but no argument is converted. The complete version specification is '%%'.
+.SH SEE ALSO
+.I _printf(3)
+
+.SH BUGS
+Probably plenty
+
+#COPYRIGHT
+Copyright 2022 Baylee Duncan & NV Ozmus. This is free software: You are free to change and redistribute it, as long as not for a grade at Holberton School. There is NO WARRANTY, to the extent permitted by law.

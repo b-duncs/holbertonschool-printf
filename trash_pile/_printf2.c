@@ -11,12 +11,16 @@ int print_integer(va_list list);
  * @format: char being evaluated
 (*
  * Description: produces output according to a format)?
+ * https://www.tutorialspoint.com/register-keyword-in-c
  * Return: printed_values
  */
 
 int _printf(const char *format, ...)
 {
 	int printed_values;
+	const char *x;
+	register int string = 0;
+
 	print_t f_list[] = {
 		{"c", print_character},
 		{"s", print_string},
@@ -34,7 +38,28 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(arg_list, format);
-	printed_values = format_string(format, f_list, arg_list);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (x = format; *x; x++)
+	{
+		if (*x == '%')
+		{
+			x++;
+			if (*x == '%')
+			{
+				string += _not_putchar('%');
+				continue;
+			}
+			while (print_t(*x, &printed_values))
+				x++;
+			pfunc = printed_values(*x);
+		}
+		else 
+			string += _not_putchar(*x);
+	}
+	_not_putchar(-1);
 	va_end(arg_list);
 	return (printed_values);
 }
@@ -85,8 +110,7 @@ int print_string(va_list list)
  * print_percent - program startup
  * @list: variable argument being evaluated
 (*
- * Description: percent output
- * https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Variable-Attributes.html)?
+ * Description: percent output)?
  * Return: return (1) is the required function signature
  */
 
@@ -108,6 +132,6 @@ int print_integer(va_list list)
 {
 	int number;
 
-	number = format_number(list);
+	number = /**print_number*/
 	return (number);
 }

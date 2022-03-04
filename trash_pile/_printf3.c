@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(arg_list, format);
-	printed_values = format_string(format, f_list, arg_list);
+	printed_values = /**parser*/
 	va_end(arg_list);
 	return (printed_values);
 }
@@ -108,6 +108,6 @@ int print_integer(va_list list)
 {
 	int number;
 
-	number = format_number(list);
+	number = /**print_number*/
 	return (number);
 }
