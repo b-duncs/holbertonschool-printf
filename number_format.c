@@ -28,7 +28,7 @@ int number_format(va_list args)
 	else
 		num = x;
 
-	for (; y > 9; )
+	for (; num / y > 9; )
 		y *= 10;
 
 	for (; y != 0; )
