@@ -50,7 +50,7 @@ int string_format(const char *format, print_t f_list[], va_list arg_list)
 		}
 		else
 		{
-			_put_char(format[x]);
+			_not_putchar(format[x]);
 			formatted_string++;
 		}
 	}
