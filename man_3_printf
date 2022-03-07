@@ -12,7 +12,7 @@
 .B int _printf(const char *
 .I format
 .B , ...)
-.SH Description 
+.SH Description
 .B _printf()
 
 functions write the output under the contral of a format string that specifies how subsequent arguments are converted for output.

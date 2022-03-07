@@ -4,10 +4,11 @@
  * string_format - program startup
  * @arg_list: variable argument list
  * @print_t: struct being evaluated
+ * @f_list: functions being evaluated
  * @format: char being evaluated
-(* 
+ (*
  * Description: formats strings for _printf
- * Return: formatted_string 
+ * Return: formatted_string
  */
 
 int string_format(const char *format, print_t f_list[], va_list arg_list)
@@ -26,9 +27,7 @@ int string_format(const char *format, print_t f_list[], va_list arg_list)
 				{
 					z = f_list[y].x(arg_list);
 					if (z == -1)
-					{
 						return (-1);
-					}
 					formatted_string += z;
 					break;
 				}
@@ -42,9 +41,7 @@ int string_format(const char *format, print_t f_list[], va_list arg_list)
 					formatted_string = formatted_string + 2;
 				}
 				else
-				{
 					return (-1);
-				}
 			}
 			x = x + 1;
 		}

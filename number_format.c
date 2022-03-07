@@ -3,7 +3,7 @@
 /**
  * number_format - program startup
  * @args: variable argument list
-(* 
+(*
  * Description: formats numbers for _printf
  * Resource: https://linux.die.net/man/3/va_arg
  * Return: format

@@ -54,7 +54,6 @@
 	- `man_3_printf`  
   
 ---  
----   
   
 ## Authors  
   
