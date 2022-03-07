@@ -3,7 +3,6 @@
 /**
  * string_format - program startup
  * @arg_list: variable argument list
- * @print_t: struct being evaluated
  * @f_list: functions being evaluated
  * @format: char being evaluated
  (*
