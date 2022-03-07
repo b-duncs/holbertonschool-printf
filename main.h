@@ -24,7 +24,6 @@ struct print
 /**
  * print_t - typedef for struct print
  */
-
 typedef struct print print_t;
 
 int _not_putchar(char x);
